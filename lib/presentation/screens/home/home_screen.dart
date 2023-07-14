@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:widgets_app/config/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,14 +23,14 @@ class _HomeView extends StatelessWidget {
     return ListView.builder(
         itemCount: appMenuItems.length,
         itemBuilder: (context, index) {
-          return _homeListTile(menuItem: appMenuItems[index]);
+          return _HomeListTile(menuItem: appMenuItems[index]);
         });
   }
 }
 
-class _homeListTile extends StatelessWidget {
+class _HomeListTile extends StatelessWidget {
 
-  const _homeListTile({
+  const _HomeListTile({
     required this.menuItem,
   });
 
@@ -45,7 +46,13 @@ class _homeListTile extends StatelessWidget {
       leading: Icon(menuItem.icon, color: colors.primary),
       trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary),
       onTap: () {
-        // TODO: Navigate to the menu item
+        // Navigator.of(context).push(
+        //   MaterialPageRoute(
+        //     builder: (context) => const ButtonsScreen(),
+        //   ),
+        // );
+
+        Navigator.of(context).pushNamed(menuItem.link);
       }
     );
   }
