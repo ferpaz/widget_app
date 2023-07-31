@@ -65,4 +65,11 @@ const appMenuItems = <MenuItem> [
     icon: Icons.accessibility_rounded,
   ),
 
+  MenuItem(
+    title: 'Infinite Scroll',
+    subTitle: 'Scroll infinito con carga de datos y pull para refrescar',
+    link: '/infinite_scroll',
+    icon: Icons.vertical_align_bottom_rounded,
+  ),
+
 ];
