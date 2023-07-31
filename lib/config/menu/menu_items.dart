@@ -79,4 +79,11 @@ const appMenuItems = <MenuItem> [
     icon: Icons.vertical_align_bottom_rounded,
   ),
 
+  MenuItem(
+    title: 'Theme Changer',
+    subTitle: 'Configuración del tema de la aplicación',
+    link: '/theme_changer',
+    icon: Icons.color_lens_outlined,
+  ),
+
 ];

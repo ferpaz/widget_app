@@ -54,5 +54,10 @@ final appRouter = GoRouter(
       name: CounterScreen.screenName,
       builder: (context, state) => const CounterScreen(),
     ),
+    GoRoute(
+      path: '/theme_changer',
+      name: ThemeChangerScreen.screenName,
+      builder: (context, state) => const ThemeChangerScreen(),
+    ),
   ]
 );
