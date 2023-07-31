@@ -15,6 +15,7 @@ class MenuItem {
 }
 
 const appMenuItems = <MenuItem> [
+
   MenuItem(
     title: 'Botones',
     subTitle: 'Varios botones en Flutter',
@@ -41,4 +42,13 @@ const appMenuItems = <MenuItem> [
     subTitle: 'Alertas y diálogos en pantalla',
     link: '/snackbar',
     icon: Icons.info_outline,
-  ),];
+  ),
+
+  MenuItem(
+    title: 'Animated Containter',
+    subTitle: 'Statefull animated container',
+    link: '/animated',
+    icon: Icons.animation_rounded,
+  ),
+
+];
