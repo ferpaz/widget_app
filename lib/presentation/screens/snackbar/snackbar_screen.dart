@@ -28,7 +28,7 @@ class SnackbarScreen extends StatelessWidget {
               child: const Text('Used licenses')
             ),
             FilledButton.tonal(
-              onPressed: () => OpenDialog(context: context),
+              onPressed: () => _openDialog(context: context),
               child: const Text('Show Dialog')
             ),
           ],
@@ -56,7 +56,7 @@ class SnackbarScreen extends StatelessWidget {
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
-  void OpenDialog({required BuildContext context}) {
+  void _openDialog({required BuildContext context}) {
     showDialog(
       context: context,
       barrierDismissible: false,
