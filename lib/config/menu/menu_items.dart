@@ -58,4 +58,11 @@ const appMenuItems = <MenuItem> [
     icon: Icons.quiz_outlined,
   ),
 
+  MenuItem(
+    title: 'Tutorial',
+    subTitle: 'Tutorial de bienvenida de la App',
+    link: '/app_tutorial',
+    icon: Icons.accessibility_rounded,
+  ),
+
 ];
