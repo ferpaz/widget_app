@@ -47,21 +47,21 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
     return Scaffold(
       body: Stack(
         children: [
+          PageView(
+            controller: pageViewController,
+            physics: const BouncingScrollPhysics(),
+            children: slides.map((slide) => _Slide(slide)).toList(),
+          ),
+
           Positioned(
             top: 30,
             right: 20,
             child: Center(
               child: TextButton(
                 child: const Text('Salir'),
-                onPressed: () => context.pop(),
+                onPressed: () => context.pop('/'),
              )
             ),
-          ),
-
-          PageView(
-            controller: pageViewController,
-            physics: const BouncingScrollPhysics(),
-            children: slides.map((slide) => _Slide(slide)).toList(),
           ),
 
           Positioned(
