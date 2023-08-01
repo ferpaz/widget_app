@@ -22,6 +22,15 @@ class AppTheme {
   })
   : assert(selectedColor >= 0 && selectedColor < colorList.length, "Color index must be greather than zero and less than ${colorList.length - 1}");
 
+  AppTheme copyWith({
+    int? selectedColor,
+    bool? isDarkMode
+  })
+    => AppTheme(
+      selectedColor: selectedColor ?? this.selectedColor,
+      isDarkMode: isDarkMode ?? this.isDarkMode
+    );
+
   ThemeData getTheme() => ThemeData(
     useMaterial3: true,
     brightness: isDarkMode ? Brightness.dark : Brightness.light,
