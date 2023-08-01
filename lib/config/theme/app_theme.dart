@@ -14,13 +14,16 @@ const colorList = <Color>[
 class AppTheme {
 
   final int selectedColor;
-  final bool isDarkMode;
+  late final bool isDarkMode;
 
   AppTheme({
     this.selectedColor = 0,
-    this.isDarkMode = false,
+    bool? isDarkMode
   })
-  : assert(selectedColor >= 0 && selectedColor < colorList.length, "Color index must be greather than zero and less than ${colorList.length - 1}");
+  : assert(selectedColor >= 0 && selectedColor < colorList.length, "Color index must be greather than zero and less than ${colorList.length - 1}")
+  {
+    this.isDarkMode = isDarkMode ?? WidgetsBinding.instance.platformDispatcher.platformBrightness == Brightness.dark;
+  }
 
   AppTheme copyWith({
     int? selectedColor,
@@ -31,12 +34,13 @@ class AppTheme {
       isDarkMode: isDarkMode ?? this.isDarkMode
     );
 
-  ThemeData getTheme() => ThemeData(
-    useMaterial3: true,
-    brightness: isDarkMode ? Brightness.dark : Brightness.light,
-    colorSchemeSeed: colorList[selectedColor],
-    appBarTheme: const AppBarTheme(
-      centerTitle: false
-    )
-  );
+  ThemeData getTheme()
+    => ThemeData(
+      useMaterial3: true,
+      brightness: isDarkMode ? Brightness.dark : Brightness.light,
+      colorSchemeSeed: colorList[selectedColor],
+      appBarTheme: const AppBarTheme(
+        centerTitle: false
+      )
+    );
 }

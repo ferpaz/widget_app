@@ -6,6 +6,8 @@ import 'package:widgets_app/config/theme/app_theme.dart';
 import 'package:widgets_app/presentation/providers/providers.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     const ProviderScope(
       child: MainApp()
